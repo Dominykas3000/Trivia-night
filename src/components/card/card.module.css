@@ -7,7 +7,6 @@
 .mainHeaderContainer {
   /* background: linear-gradient(0deg, rgba(98, 150, 119, 1) 4%, rgba(88, 84, 129, 1) 53%, rgba(234, 82, 111, 1) 91%);
   ; */
-
   padding: 24px;
   display: flex;
   justify-content: center;
@@ -15,19 +14,58 @@
   align-items: center;
   gap: 16px;
   border-radius: 16px;
-  border: 1px solid var(--main-text-color);
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  border: 2px solid var(--main-text-color);
   box-shadow: var(--card-box-shadow);
-  
+  background-color: var(--card-background-);
+  width: -webkit-fill-available;
+  width: moz-available;
+  width: stretch;
 }
 
-.mainText {
-  font-size: var(--font-size-large);
+.answerButton {
+  width: 100px;
+  height: 40px;
+}
+
+.answerButton {
+  /* background-color: var(--accent-color-purple); */
   color: var(--main-text-color);
+  font-size: var(--font-size-semi-medium);
+  font-weight: var(--font-weight-bold);
+  border-radius: 8px;
+  padding: 10px;
+  border: 2px solid var(--main-text-color);
+}
+
+.selectedAnswer {
+  background-color: var(--accent-color-pink);
+}
+
+
+
+.mainText {
+  font-size: var(--font-size-huge);
+  color: var(--main-text-color);
+  font-style: oblique;
 }
 
 .subText {
   font-size: var(--font-size-regular);
   font-style: oblique;
   color: var(--main-text-color);
+}
+
+.sectionTab {
+  width: 100%;
+  height: 2px;
+  color: var(--accent-color-purple);
+  background-color: var(--accent-color-purple);
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  margin: 20px auto;
 }

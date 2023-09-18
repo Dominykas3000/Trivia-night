@@ -49,20 +49,15 @@
 }
 
 .startButton {
-  background-color: var(--accent-color-pink);
-  color: var(--main-text-color);
-  font-size: var(--font-size-semi-medium);
-  font-weight: var(--font-weight-bold);
-  border-radius: 8px;
-  padding: 10px;
-  border: 2px solid var(--main-text-color);
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
   max-width: 300px;
   width: 100%;
   position: absolute;
   bottom: 0;
-  font-style: oblique;
+  background-color: var(--accent-color-pink);
+}
+
+.startButton:hover {
+  background-color: var(--accent-color-green);
 }
 
 .whyTriviaContainer {
@@ -73,11 +68,7 @@
   gap: 16px;
 }
 
-.startButton:hover {
-  background-color: var(--accent-color-green);
-  color: var(--main-text-color);
-  border: 2px solid var(--main-text-color);
-}
+
 
 @media screen and (max-width: 960px) {
   .welcomeSection {
@@ -98,6 +89,7 @@
   .startButton {
     position: relative;
     bottom: 0;
+    width: 100%;
   }
 
   .triviaDesc {
