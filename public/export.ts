@@ -1,0 +1,1 @@
+export {default as TriviaLogo} from './trivia.svg';

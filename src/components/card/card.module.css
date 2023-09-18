@@ -1,0 +1,33 @@
+.card {
+  min-height: fit-content;
+  background-color: var(--main-bg-color);
+  width: 90%;
+}
+
+.mainHeaderContainer {
+  /* background: linear-gradient(0deg, rgba(98, 150, 119, 1) 4%, rgba(88, 84, 129, 1) 53%, rgba(234, 82, 111, 1) 91%);
+  ; */
+
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--main-text-color);
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  box-shadow: var(--card-box-shadow);
+  
+}
+
+.mainText {
+  font-size: var(--font-size-large);
+  color: var(--main-text-color);
+}
+
+.subText {
+  font-size: var(--font-size-regular);
+  font-style: oblique;
+  color: var(--main-text-color);
+}
