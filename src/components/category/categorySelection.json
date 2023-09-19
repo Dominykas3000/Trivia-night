@@ -1,0 +1,129 @@
+{
+  "categories": [
+    {
+      "value": "1",
+      "name": "Any Category",
+      "link": "https://opentdb.com/api.php?amount=1"
+    },
+    {
+      "value": "2",
+      "name": "General Knowledge",
+      "link": "https://opentdb.com/api.php?amount=1&category=9"
+    },
+    {
+      "value": "3",
+      "name": "Entertainment: Books",
+      "link": "https://opentdb.com/api.php?amount=1&category=10"
+    },
+    {
+      "value": "4",
+      "name": "Entertainment: Film",
+      "link": "https://opentdb.com/api.php?amount=1&category=11"
+    },
+    {
+      "value": "5",
+      "name": "Entertainment: Music",
+      "link": "https://opentdb.com/api.php?amount=1&category=12"
+    },
+    {
+      "value": "6",
+      "name": "Entertainment: Musicals & Theatres",
+      "link": "https://opentdb.com/api.php?amount=1&category=13"
+    },
+    {
+      "value": "7",
+      "name": "Entertainment: Television",
+      "link": "https://opentdb.com/api.php?amount=1&category=14"
+    },
+    {
+      "value": "8",
+      "name": "Entertainment: Video Games",
+      "link": "https://opentdb.com/api.php?amount=1&category=15"
+    },
+    {
+      "value": "9",
+      "name": "Entertainment: Board Games",
+      "link": "https://opentdb.com/api.php?amount=1&category=16"
+    },
+    {
+      "value": "10",
+      "name": "Science & Nature",
+      "link": "https://opentdb.com/api.php?amount=1&category=17"
+    },
+    {
+      "value": "11",
+      "name": "Science: Computers",
+      "link": "https://opentdb.com/api.php?amount=1&category=18"
+    },
+    {
+      "value": "12",
+      "name": "Science: Mathematics",
+      "link": "https://opentdb.com/api.php?amount=1&category=19"
+    },
+    {
+      "value": "13",
+      "name": "Mythology",
+      "link": "https://opentdb.com/api.php?amount=1&category=20"
+    },
+    {
+      "value": "14",
+      "name": "Sports",
+      "link": "https://opentdb.com/api.php?amount=1&category=21"
+    },
+    {
+      "value": "15",
+      "name": "Geography",
+      "link": "https://opentdb.com/api.php?amount=1&category=22"
+    },
+    {
+      "value": "16",
+      "name": "History",
+      "link": "https://opentdb.com/api.php?amount=1&category=23"
+    },
+    {
+      "value": "17",
+      "name": "Politics",
+      "link": "https://opentdb.com/api.php?amount=1&category=24"
+    },
+    {
+      "value": "18",
+      "name": "Art",
+      "link": "https://opentdb.com/api.php?amount=1&category=25"
+    },
+    {
+      "value": "19",
+      "name": "Celebrities",
+      "link": "https://opentdb.com/api.php?amount=1&category=26"
+    },
+    {
+      "value": "20",
+      "name": "Animals",
+      "link": "https://opentdb.com/api.php?amount=1&category=27"
+    },
+    {
+      "value": "21",
+      "name": "Vehicles",
+      "link": "https://opentdb.com/api.php?amount=1&category=28"
+    },
+    {
+      "value": "22",
+      "name": "Entertainment: Comics",
+      "link": "https://opentdb.com/api.php?amount=1&category=29"
+    },
+    {
+      "value": "23",
+      "name": "Science: Gadgets",
+      "link": "https://opentdb.com/api.php?amount=1&category=30"
+    },
+    {
+      "value": "24",
+      "name": "Entertainment: Japanese Anime & Manga",
+      "link": "https://opentdb.com/api.php?amount=1&category=31"
+    },
+    {
+      "value": "25",
+      "name": "Entertainment: Cartoon & Animations",
+      "link": "https://opentdb.com/api.php?amount=1&category=32"
+    }
+  ]
+}

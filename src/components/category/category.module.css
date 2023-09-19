@@ -1,0 +1,57 @@
+.mainCard {
+  gap: 20px;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+  border: 2px solid var(--main-text-color);
+  box-shadow: var(--card-box-shadow);
+  width: -webkit-fill-available;
+  width: moz-available;
+  width: stretch;
+}
+
+.mainText {
+  font-size: var(--font-size-huge);
+  color: var(--main-text-color);
+  font-style: oblique;
+  text-align: center;
+}
+
+.sectionTab {
+  width: 100%;
+  height: 2px;
+  color: var(--accent-color-purple);
+  background-color: var(--accent-color-purple);
+}
+.categorySelectionLabel {
+  display: flex;
+  margin-bottom: 5px;
+  font-size: var(--font-size-medium);
+  color: var(--main-text-color);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.categorySelection{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.categorySelectionOption{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--main-text-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}

@@ -16,16 +16,12 @@
   border-radius: 16px;
   border: 2px solid var(--main-text-color);
   box-shadow: var(--card-box-shadow);
-  background-color: var(--card-background-);
+  /* background-color: var(--card-background-color); */
   width: -webkit-fill-available;
   width: moz-available;
   width: stretch;
 }
 
-.answerButton {
-  width: 100px;
-  height: 40px;
-}
 
 .answerButton {
   /* background-color: var(--accent-color-purple); */
@@ -37,11 +33,13 @@
   border: 2px solid var(--main-text-color);
 }
 
-.selectedAnswer {
-  background-color: var(--accent-color-pink);
+.answerButton:hover {
+  background-color: var(--accent-color-hot-purple);
 }
 
-
+.answerButtonClicked {
+  background-color: var(--accent-color-hot-purple);
+}
 
 .mainText {
   font-size: var(--font-size-huge);

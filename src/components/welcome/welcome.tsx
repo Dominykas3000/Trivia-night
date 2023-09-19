@@ -12,7 +12,7 @@ export default function welcome() {
                     <h3>Here you will experience the joy of trivia!</h3>
                     {/* <TriviaLogo height={50} width={50} /> */}
                 </div>
-                <Link href={'/play'}>
+                <Link href={'/categorySelection'}>
                     <button className={styles.startButton}>
                         Start Playing!
                     </button>

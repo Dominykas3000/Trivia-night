@@ -8,6 +8,7 @@ interface TriviaQuestion {
   question: string;
   correct_answer: string;
   incorrect_answers: string[];
+  shuffledAnswers: string[]; // New property for shuffled answers
 }
 
 export default function Card() {
@@ -20,8 +21,9 @@ export default function Card() {
 
     try {
       const response = await axios.get('https://opentdb.com/api.php?amount=1&category=28');
-
-      setTriviaQuestions(response.data.results);
+      const triviaData = response.data.results[0];
+      const shuffledAnswers = shuffleAnswers([...triviaData.incorrect_answers, triviaData.correct_answer]);
+      setTriviaQuestions([{ ...triviaData, shuffledAnswers }]);
     }
     catch (error) {
       console.error('Error fetching trivia data:', error);
@@ -29,10 +31,6 @@ export default function Card() {
 
     setLoading(false);
   }
-
-  useEffect(() => {
-    getTriviaData();
-  }, []);
 
   function shuffleAnswers(array: string[]) {
     const shuffleAnswers = [...array];
@@ -49,25 +47,15 @@ export default function Card() {
     return text.replace(/(&quot\;)/g, "\"").replace(/(&rsquo\;)/g, "\"").replace(/(&#039\;)/g, "\'").replace(/(&amp\;)/g, "\"").replace(/(&ldquo\;)/g, "\"").replace(/(&rdquo\;)/g, "\"").replace(/(&eacute\;)/g, "é").replace(/(&shy\;)/g, "")
   }
 
-  // function checkAnswer(selectedAnswer: string, correctAnswer: string) {
-  //   console.log(selectedAnswer);
-  //   if (selectedAnswer === correctAnswer) {
-  //     alert("Correct!");
-  //   }
-  // }
-
   function handleAnswerSelect(answer: string) {
     setSelectedAnswer(answer);
   }
 
-
   function checkAnswer() {
-    if (selectedAnswer === null) {
-      return; // No answer selected, do nothing
-    }
-
     const currentQuestion = triviaQuestions[0];
-    console.log(triviaQuestions[0])
+    if (selectedAnswer === null) {
+      return;
+    }
     if (selectedAnswer === currentQuestion.correct_answer) {
       alert("Correct!");
     } else {
@@ -75,7 +63,9 @@ export default function Card() {
     }
   }
 
-
+  useEffect(() => {
+    getTriviaData();
+  }, []);
 
   return (
     <section className={style.mainHeaderContainer}>
@@ -90,15 +80,10 @@ export default function Card() {
               <h2>{removeCharacters(triviaData.question)}</h2>
             </div>
             <section className={style.buttonContainer}>
-              {/* {triviaData.incorrect_answers.map((answer, answerIndex) => (
-                <button key={answerIndex}>{removeCharacters(answer)}</button>
-              ))}
-              <button>{removeCharacters(triviaData.correct_answer)}</button> */}
-              {shuffleAnswers([...triviaData.incorrect_answers, triviaData.correct_answer]).map((answer: string, answerIndex: number) => (
+              {triviaData.shuffledAnswers.map((answer: string, answerIndex: number) => (
                 <button
                   key={answerIndex}
-                  className={style.answerButton}
-                  // className={selectedAnswer === answer ? style.selectedAnswer : ''}
+                  className={answer === selectedAnswer ? style.answerButtonClicked : style.answerButton}
                   onClick={() => handleAnswerSelect(answer)}
                 >
                   {removeCharacters(answer)}

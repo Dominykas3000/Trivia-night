@@ -3,7 +3,7 @@
   padding: 20px;
   flex-direction: row;
   gap: 20px;
-  background-color: var(--card-background-color);
+  /* background-color: var(--card-background-color); */
   width: 100%;
   box-shadow: var(--card-box-shadow);
   /* min-height: 70vh; */
