@@ -43,6 +43,55 @@
  }
 
 
+ select {
+   width: 100%;
+   font-size: var(--font-size-semi-medium);
+   background-color: var(--main-bg-color);
+   border: 2px solid var(--main-text-color);
+   border-radius: 0.25rem;
+   color: var(--main-text-color);
+   cursor: pointer;
+   padding: 16px 20px;
+   appearance: none;
+
+   transition: all 0.2s ease-in-out;
+
+ }
+
+ select:after {
+   content: '\25BC';
+   /* Unicode character for a downward triangle */
+   position: absolute;
+   top: 50%;
+   right: 10px;
+   /* Adjust the position to your preference */
+   transform: translateY(-50%);
+   transition: transform 0.3s ease;
+   /* Add a transition for smooth movement */
+ }
+
+ select:focus {
+   outline: none;
+   box-shadow: var(--card-box-shadow);
+ }
+
+ select:active {
+   outline: none;
+   box-shadow: var(--card-box-shadow);
+ }
+
+ select:hover {
+   outline: none;
+   box-shadow: var(--card-box-shadow);
+ }
+
+ option {
+   font-weight: var(--font-weight-semi-bold);
+   font-size: var(--font-size-semi-medium);
+   color: var(--main-text-color);
+   background-color: var(--main-bg-color);
+ }
+
 
  h1,
  h2,
