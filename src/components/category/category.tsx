@@ -2,9 +2,10 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import style from './category.module.css'
-import CategoriesJson from './categorySelection.json'
+import CategoriesJson from '../../../public/categorySelection.json'
 import Triangle from '../../../public/triangle.svg'
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface Category {
   value: string;
@@ -17,8 +18,14 @@ interface Categories {
 }
 
 export default function Category() {
-
+  const [categoryPassed, setCategoryPassed] = useState<string>('');
+  const [categoryName, setCategoryName] = useState<string>('');
   const { categories } = CategoriesJson as Categories;
+
+  function handleSelectCategory(categoryId: string, categoryName: string) {
+    setCategoryPassed(categoryId);
+    setCategoryName(categoryName);
+  }
 
   return (
     <section className={style.mainCard}>
@@ -40,7 +47,8 @@ export default function Category() {
             <option
               className={style.categorySelectionOption}
               value={category.value}
-              key={category.value}>
+              key={category.value}
+              onClick={() => handleSelectCategory(category.value, category.name)}>
               {category.name}
             </option>
           ))}
@@ -50,11 +58,18 @@ export default function Category() {
           <Triangle height={14} width={12} />
         </div>
       </div>
-      <Link href={'/play'}>
+      <Link
+        href={{
+          pathname: '/play',
+          query: {
+            categoryId: categoryPassed,
+            category: categoryName,
+          }
+        }}>
         <button className={style.startButton}>
           Start Playing!
         </button>
       </Link>
-    </section>
+    </section >
   )
 }
