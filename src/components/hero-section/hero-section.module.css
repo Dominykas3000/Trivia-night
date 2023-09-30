@@ -1,0 +1,63 @@
+.heroSectionContainer {
+  position: relative;
+  width: 100%;
+}
+
+.heroImage {
+  height: 100%;
+  filter: blur(0.5px);
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+  max-height: 700px;
+  margin-right: -96px;
+  margin-left: -96px;
+  width: calc(100% + 192px) !important;
+}
+
+.heroTextContainer {
+  position: absolute;
+  top: 25%;
+  z-index: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heroTextContainer>* {
+  color: var(--main-bg-color);
+  font-style: oblique;
+  font-weight: var(--font-weight-semi-bold);
+  text-align: left;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.heroText {
+  font-size: var(--font-size-large);
+}
+
+.heroDescription {
+  font-size: var(--font-size-regular);
+}
+
+.startButton {
+  width: 100%;
+  color: var(--main-bg-color);
+  border-color: var(--main-bg-color);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.startButton:hover {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+  border:2px solid var(--main-bg-color);
+}
+
+@media screen and (max-width: 768px) {
+  .heroImage{
+    margin-right: -16px;
+    margin-left: -16px;
+    width: calc(100% + 32px) !important;
+  }
+}

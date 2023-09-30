@@ -83,3 +83,10 @@
   width: 230px;
   background-color: var(--accent-color-green);
 }
+
+.numberLabel{
+  font-size: var(--font-size-semi-medium);
+  color: var(--main-text-color);
+  font-weight: var(--font-weight-semi-bold);
+  margin-left: 12px;
+}

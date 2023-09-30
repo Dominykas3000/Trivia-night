@@ -2,12 +2,11 @@
 import Header from '@/components/header/header'
 import './globals.css'
 import type { Metadata } from 'next'
-import Head from 'next/head'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700',],
+  // weight: ['400', '500', '600', '700',],
   variable: '--font-family',
 })
 
@@ -24,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body style={inter.style}>
+      <body className={inter.className}>
         <Header />
         {children}
       </body>

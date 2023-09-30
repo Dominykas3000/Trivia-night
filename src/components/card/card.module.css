@@ -91,11 +91,11 @@
 }
 
 .backButton:hover {
-  background-color: var(--accent-color-hot-pink);
+  background-color: var(--accent-color-pink);
 }
 
 .nextQuestion:hover {
-  background-color: var(--accent-color-hot-green);
+  background-color: var(--accent-color-green);
 }
 
 .navButton {

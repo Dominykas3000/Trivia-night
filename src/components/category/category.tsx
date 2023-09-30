@@ -21,7 +21,7 @@ export default function Category() {
   const [categoryPassed, setCategoryPassed] = useState<string>('');
   const [categoryName, setCategoryName] = useState<string>('');
   const { categories } = CategoriesJson as Categories;
-
+  const [numberOfQuestions, setNumberOfQuestions] = useState<string>('5');
   function handleSelectCategory(categoryId: string, categoryName: string) {
     setCategoryPassed(categoryId);
     setCategoryName(categoryName);
@@ -54,9 +54,24 @@ export default function Category() {
           ))}
 
         </select>
+
         <div className={style.iconContainer} >
           <Triangle height={14} width={12} />
         </div>
+
+        <form>
+          <h4 className={style.numberOfQuestionsLabel}>
+            Number of questions:
+          </h4>
+          <label className={style.numberLabel}>
+            <input
+              type="radio"
+              id="5"
+              name="numberOfQuestions" />
+            5
+          </label>
+        </form>
+
       </div>
       <Link
         href={{

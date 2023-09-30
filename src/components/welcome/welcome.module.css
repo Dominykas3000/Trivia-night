@@ -1,14 +1,13 @@
 .welcomeSection {
   display: flex;
-  padding: 20px;
-  flex-direction: row;
-  gap: 20px;
-  /* background-color: var(--card-background-color); */
+  flex-direction: column;
   width: 100%;
-  box-shadow: var(--card-box-shadow);
+  gap: 48px;
+  /* background-color: var(--card-background-color); */
+  /* box-shadow: var(--card-box-shadow); */
   /* min-height: 70vh; */
-  border-radius: 16px;
-  border: 2px solid var(--main-text-color);
+  /* border-radius: 16px; */
+  /* border: 2px solid var(--main-text-color); */
 }
 
 .triviaDescContainer {

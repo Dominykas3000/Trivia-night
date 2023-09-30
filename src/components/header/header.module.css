@@ -1,25 +1,50 @@
 .header {
-    background: radial-gradient(circle, rgba(98, 150, 119, 1) 11%, rgba(234, 82, 111, 1) 46%, rgba(88, 84, 129, 1) 84%);
-    min-height: 10vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    border-radius: 0px 0px 16px 16px;
-    border: 2px solid var(--main-text-color);
+  /* background: radial-gradient(circle, rgba(98, 150, 119, 1) 11%, rgba(234, 82, 111, 1) 46%, rgba(88, 84, 129, 1) 84%); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border-radius: 0px 0px 16px 16px; */
+  border-bottom: 2px solid var(--main-text-color);
+  margin-right: -96px;
+  margin-left: -96px;
+  width: calc(100% + 192px);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  padding: 16px;
+  position: relative;
+  /* box-shadow: var(--card-box-shadow); */
 }
 
 .title {
-    font-size: var(--font-size-huge);
-    font-weight: var(--font-weight-semi-bold);
-    font-style: oblique;
-    color: var(--main-bg-color);
+  font-size: var(--font-size-huge);
+  font-weight: var(--font-weight-semi-bold);
+  font-style: oblique;
+  color: var(--main-text-color);
+}
+
+.playButton {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+}
+
+.playButtonLink {
+  position: absolute;
+  right: 24px;
+  top: auto;
+}
+
+.playButton:hover {
+  background-color: var(--accent-color-green);
 }
 
 @media screen and (max-width: 768px) {
-    .header {
-        margin: 0;
-        min-height: 8vh;
-    }
+  .header {
+    margin-right: -16px;
+    margin-left: -16px;
+    width: calc(100% + 32px);
+  }
+
+  .title {
+    font-size: var(--font-size-large);
+  }
 }

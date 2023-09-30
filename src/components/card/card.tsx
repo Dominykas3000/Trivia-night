@@ -130,7 +130,7 @@ export default function Card(props: Category) {
               </Link>
               <button onClick={checkAnswer}
                 className={`${style.nextQuestion} ${style.navButton}`}>
-                <h4>Check Answer</h4>
+                <h4>Next Question</h4>
                 <ArrowRight height={25} width={25} />
               </button>
             </div>
