@@ -51,13 +51,17 @@
 .startButton:hover {
   background-color: var(--main-text-color);
   color: var(--main-bg-color);
-  border:2px solid var(--main-bg-color);
+  border: 2px solid var(--main-bg-color);
 }
 
 @media screen and (max-width: 768px) {
-  .heroImage{
+  .heroImage {
     margin-right: -16px;
     margin-left: -16px;
     width: calc(100% + 32px) !important;
+  }
+
+  .heroTextContainer {
+    top: 5%;
   }
 }

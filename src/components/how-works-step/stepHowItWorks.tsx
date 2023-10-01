@@ -17,8 +17,8 @@ export default function stepHowItWorks(props: StepText) {
       }
       <QuestionMark height={48} width={48} />
       <div className={style.textContainer}>
-        <h2>{props.stepHeading}</h2>
-        <h4>{props.stepText}</h4>
+        <h2 className={style.stepHeader}>{props.stepHeading}</h2>
+        <h4 className={style.stepSubHeader}>{props.stepText}</h4>
       </div>
     </div>
   )

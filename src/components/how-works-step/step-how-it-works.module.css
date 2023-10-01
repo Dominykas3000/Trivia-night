@@ -40,9 +40,33 @@
   background-color: var(--main-text-color);
 }
 
+.stepSubHeader {
+  font-size: var(--font-size-semi-medium);
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--main-text-color);
+  text-align: left;
+}
+
 .progressBar {
   padding-bottom: 75%;
 }
 
-.stepText{
+@media screen and (max-width: 768px) {
+  .stepHeader {
+    font-size: var(--font-size-medium);
+  }
+
+  .textContainer {
+    padding-bottom: 10%;
+  }
+
+  .progressBarWrapper {
+    height: 45%;
+    top: 45%;
+  }
+
+  .stepSubHeader {
+    font-size: var(--font-size-small);
+  }
+
 }
