@@ -14,7 +14,7 @@ interface TriviaQuestion {
   question: string;
   correct_answer: string;
   incorrect_answers: string[];
-  shuffledAnswers: string[]; // New property for shuffled answers
+  shuffledAnswers: string[];
 }
 
 interface Category {

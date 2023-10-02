@@ -3,62 +3,74 @@
     {
       "value": "1",
       "name": "Any Category",
-      "link": "https://opentdb.com/api.php?amount=1"
+      "link": "https://opentdb.com/api.php?amount=1",
+      "image": "https://images.unsplash.com/photo-1534551767192-78b8dd45b51b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       "value": "2",
       "name": "General Knowledge",
-      "link": "https://opentdb.com/api.php?amount=1&category=9"
+      "link": "https://opentdb.com/api.php?amount=1&category=9",
+      "image": "https://plus.unsplash.com/premium_photo-1661963944318-4058b4b9bbc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       "value": "3",
       "name": "Entertainment: Books",
-      "link": "https://opentdb.com/api.php?amount=1&category=10"
+      "link": "https://opentdb.com/api.php?amount=1&category=10",
+      "image": "https://plus.unsplash.com/premium_photo-1677567996070-68fa4181775a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
     },
     {
       "value": "4",
       "name": "Entertainment: Film",
-      "link": "https://opentdb.com/api.php?amount=1&category=11"
+      "link": "https://opentdb.com/api.php?amount=1&category=11",
+      "image": "https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80"
     },
     {
       "value": "5",
       "name": "Entertainment: Music",
-      "link": "https://opentdb.com/api.php?amount=1&category=12"
+      "link": "https://opentdb.com/api.php?amount=1&category=12",
+      "image": "https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
     },
     {
       "value": "6",
       "name": "Entertainment: Musicals & Theatres",
-      "link": "https://opentdb.com/api.php?amount=1&category=13"
+      "link": "https://opentdb.com/api.php?amount=1&category=13",
+      "image": "https://images.unsplash.com/photo-1618154782021-6601491cfc0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fE11c2ljYWxzJTIwJTI2JTIwVGhlYXRyZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
       "value": "7",
       "name": "Entertainment: Television",
-      "link": "https://opentdb.com/api.php?amount=1&category=14"
+      "link": "https://opentdb.com/api.php?amount=1&category=14",
+      "image": "https://images.unsplash.com/photo-1579935339434-f0f4e6646fdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHRlbGV2aXNpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
       "value": "8",
       "name": "Entertainment: Video Games",
-      "link": "https://opentdb.com/api.php?amount=1&category=15"
+      "link": "https://opentdb.com/api.php?amount=1&category=15",
+      "image": "https://images.unsplash.com/photo-1625805866449-3589fe3f71a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
     },
     {
       "value": "9",
       "name": "Entertainment: Board Games",
-      "link": "https://opentdb.com/api.php?amount=1&category=16"
+      "link": "https://opentdb.com/api.php?amount=1&category=16",
+      "image": "https://images.unsplash.com/photo-1637120149073-54319e6f9fc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       "value": "10",
       "name": "Science & Nature",
-      "link": "https://opentdb.com/api.php?amount=1&category=17"
+      "link": "https://opentdb.com/api.php?amount=1&category=17",
+      "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TmF0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
     },
     {
       "value": "11",
       "name": "Science: Computers",
-      "link": "https://opentdb.com/api.php?amount=1&category=18"
+      "link": "https://opentdb.com/api.php?amount=1&category=18",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       "value": "12",
       "name": "Science: Mathematics",
-      "link": "https://opentdb.com/api.php?amount=1&category=19"
+      "link": "https://opentdb.com/api.php?amount=1&category=19",
+      "image": "https://images.unsplash.com/photo-1635372722656-389f87a941b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80"
     },
     {
       "value": "13",

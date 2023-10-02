@@ -35,7 +35,10 @@
    padding: 0 6rem;
    padding-bottom: 2rem;
    font-family: var(--font-family);
-   /* background: url(../../public/background.svg); */
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   min-height: 100vh;
  }
 
  @media screen and (max-width: 768px) {

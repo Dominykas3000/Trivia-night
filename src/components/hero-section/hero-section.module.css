@@ -4,25 +4,28 @@
 }
 
 .heroImage {
-  height: 100%;
   filter: blur(0.5px);
   object-fit: cover;
   object-position: center;
   z-index: -1;
-  max-height: 700px;
   margin-right: -96px;
   margin-left: -96px;
   width: calc(100% + 192px) !important;
+  height: 93vh !important;
 }
 
 .heroTextContainer {
+  padding: 16px;
   position: absolute;
   top: 25%;
   z-index: 1;
-  max-width: 400px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  /* background-color: var(--main-text-color); */
+  border-radius: 8px;
+  background-color: rgba(7, 6, 0, 0.5);
 }
 
 .heroTextContainer>* {
@@ -34,11 +37,13 @@
 }
 
 .heroText {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-huge);
+  opacity: 1;
 }
 
 .heroDescription {
-  font-size: var(--font-size-regular);
+  font-size: var(--font-size-medium);
+  opacity: 1;
 }
 
 .startButton {
@@ -59,9 +64,11 @@
     margin-right: -16px;
     margin-left: -16px;
     width: calc(100% + 32px) !important;
+    height: 50avh !important;
   }
 
   .heroTextContainer {
     top: 5%;
+    max-width: 400px;
   }
 }
