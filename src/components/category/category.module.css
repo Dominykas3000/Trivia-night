@@ -103,3 +103,10 @@
   font-weight: var(--font-weight-semi-bold);
   margin-left: 12px;
 }
+
+@media screen and (max-width: 768px) {
+  .mainCard>div {
+    width: 100%;
+    height: 450px;
+  }
+}

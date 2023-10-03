@@ -26,10 +26,19 @@ export default function Category() {
   const { categories } = CategoriesJson as Categories;
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
-    mode: "free-snap",
     slides: {
-      perView: 3,
+      perView: 3.15,
       spacing: 15,
+    },
+    breakpoints: {
+      '(max-width: 768px)': {
+        vertical: true,
+        mode: "free-snap",
+        slides: {
+          perView: 1.05,
+          spacing: 0,
+        },
+      },
     },
   })
 
@@ -49,7 +58,8 @@ export default function Category() {
         Categories to choose from:
       </h2>
 
-      <div ref={ref} className="keen-slider">
+      
+      <div ref={ref} className={"keen-slider"}>
         {categories.map((category, index) => (
           <div key={index} className="keen-slider__slide" >
             <CategorySelectionCard

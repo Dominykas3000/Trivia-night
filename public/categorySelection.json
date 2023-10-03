@@ -4,7 +4,7 @@
       "value": "1",
       "name": "Any Category",
       "link": "https://opentdb.com/api.php?amount=1",
-      "image": "https://images.unsplash.com/photo-1534551767192-78b8dd45b51b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      "image": "https://images.unsplash.com/photo-1570937943292-a574bd5bc722?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
     },
     {
       "value": "2",
@@ -14,43 +14,43 @@
     },
     {
       "value": "3",
-      "name": "Entertainment: Books",
+      "name": "Books",
       "link": "https://opentdb.com/api.php?amount=1&category=10",
       "image": "https://plus.unsplash.com/premium_photo-1677567996070-68fa4181775a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
     },
     {
       "value": "4",
-      "name": "Entertainment: Film",
+      "name": "Film",
       "link": "https://opentdb.com/api.php?amount=1&category=11",
       "image": "https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80"
     },
     {
       "value": "5",
-      "name": "Entertainment: Music",
+      "name": "Music",
       "link": "https://opentdb.com/api.php?amount=1&category=12",
       "image": "https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
     },
     {
       "value": "6",
-      "name": "Entertainment: Musicals & Theatres",
+      "name": "Musicals & Theatres",
       "link": "https://opentdb.com/api.php?amount=1&category=13",
       "image": "https://images.unsplash.com/photo-1618154782021-6601491cfc0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fE11c2ljYWxzJTIwJTI2JTIwVGhlYXRyZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
       "value": "7",
-      "name": "Entertainment: Television",
+      "name": "Television",
       "link": "https://opentdb.com/api.php?amount=1&category=14",
       "image": "https://images.unsplash.com/photo-1579935339434-f0f4e6646fdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHRlbGV2aXNpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
       "value": "8",
-      "name": "Entertainment: Video Games",
+      "name": "Video Games",
       "link": "https://opentdb.com/api.php?amount=1&category=15",
       "image": "https://images.unsplash.com/photo-1625805866449-3589fe3f71a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
     },
     {
       "value": "9",
-      "name": "Entertainment: Board Games",
+      "name": "Board Games",
       "link": "https://opentdb.com/api.php?amount=1&category=16",
       "image": "https://images.unsplash.com/photo-1637120149073-54319e6f9fc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
@@ -75,67 +75,80 @@
     {
       "value": "13",
       "name": "Mythology",
-      "link": "https://opentdb.com/api.php?amount=1&category=20"
+      "link": "https://opentdb.com/api.php?amount=1&category=20",
+      "image": "https://images.unsplash.com/photo-1605373659489-bed5bc01dc33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
     },
     {
       "value": "14",
       "name": "Sports",
-      "link": "https://opentdb.com/api.php?amount=1&category=21"
+      "link": "https://opentdb.com/api.php?amount=1&category=21",
+      "image": "https://plus.unsplash.com/premium_photo-1676634832558-6654a134e920?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80"
     },
     {
       "value": "15",
       "name": "Geography",
-      "link": "https://opentdb.com/api.php?amount=1&category=22"
+      "link": "https://opentdb.com/api.php?amount=1&category=22",
+      "image": "https://images.unsplash.com/photo-1604351888999-9ea0a2851e61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1886&q=80"
     },
     {
       "value": "16",
       "name": "History",
-      "link": "https://opentdb.com/api.php?amount=1&category=23"
+      "link": "https://opentdb.com/api.php?amount=1&category=23",
+      "image": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
     },
     {
       "value": "17",
       "name": "Politics",
-      "link": "https://opentdb.com/api.php?amount=1&category=24"
+      "link": "https://opentdb.com/api.php?amount=1&category=24",
+      "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
     },
     {
       "value": "18",
       "name": "Art",
-      "link": "https://opentdb.com/api.php?amount=1&category=25"
+      "link": "https://opentdb.com/api.php?amount=1&category=25",
+      "image": "https://images.unsplash.com/photo-1515405295579-ba7b45403062?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80"
     },
     {
       "value": "19",
       "name": "Celebrities",
-      "link": "https://opentdb.com/api.php?amount=1&category=26"
+      "link": "https://opentdb.com/api.php?amount=1&category=26",
+      "image": "https://plus.unsplash.com/premium_photo-1661964430383-45db893baf3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
     },
     {
       "value": "20",
       "name": "Animals",
-      "link": "https://opentdb.com/api.php?amount=1&category=27"
+      "link": "https://opentdb.com/api.php?amount=1&category=27",
+      "image": "https://images.unsplash.com/photo-1534551767192-78b8dd45b51b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       "value": "21",
       "name": "Vehicles",
-      "link": "https://opentdb.com/api.php?amount=1&category=28"
+      "link": "https://opentdb.com/api.php?amount=1&category=28",
+      "image": "https://images.unsplash.com/photo-1504735432588-ab3bf116740f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
     },
     {
       "value": "22",
-      "name": "Entertainment: Comics",
-      "link": "https://opentdb.com/api.php?amount=1&category=29"
+      "name": "Comics",
+      "link": "https://opentdb.com/api.php?amount=1&category=29",
+      "image": "https://images.unsplash.com/photo-1620336655055-088d06e36bf0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
     },
     {
       "value": "23",
       "name": "Science: Gadgets",
-      "link": "https://opentdb.com/api.php?amount=1&category=30"
+      "link": "https://opentdb.com/api.php?amount=1&category=30",
+      "image": "https://images.unsplash.com/photo-1515940279136-2f419eea8051?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1914&q=80"
     },
     {
       "value": "24",
-      "name": "Entertainment: Japanese Anime & Manga",
-      "link": "https://opentdb.com/api.php?amount=1&category=31"
+      "name": "Japanese Anime & Manga",
+      "link": "https://opentdb.com/api.php?amount=1&category=31",
+      "image": "https://images.unsplash.com/photo-1611457194403-d3aca4cf9d11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1886&q=80"
     },
     {
       "value": "25",
-      "name": "Entertainment: Cartoon & Animations",
-      "link": "https://opentdb.com/api.php?amount=1&category=32"
+      "name": "Cartoon & Animations",
+      "link": "https://opentdb.com/api.php?amount=1&category=32",
+      "image": "https://images.unsplash.com/photo-1616097970275-1e187b4ce59f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
     }
   ]
 }
