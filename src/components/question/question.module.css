@@ -1,0 +1,119 @@
+.answerButton {
+  /* background-color: var(--accent-color-purple); */
+  color: var(--main-text-color);
+  font-size: var(--font-size-semi-medium);
+  font-weight: var(--font-weight-bold);
+  border-radius: 8px;
+  padding: 10px;
+  border: 2px solid var(--main-text-color);
+  max-width: 300px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 60px;
+}
+
+.answerButton:hover {
+  background-color: var(--accent-color-hot-purple);
+}
+
+.answerButtonClicked {
+  background-color: var(--accent-color-hot-purple);
+  max-width: 300px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 60px;
+}
+
+.mainText {
+  font-size: var(--font-size-huge);
+  color: var(--main-text-color);
+  font-style: oblique;
+}
+
+.subText {
+  font-size: var(--font-size-regular);
+  font-style: oblique;
+  color: var(--main-text-color);
+}
+
+.sectionTab {
+  width: 100%;
+  height: 2px;
+  color: var(--accent-color-purple);
+  background-color: var(--accent-color-purple);
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  margin: 40px auto;
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.backButton {
+  color: var(--main-text-color);
+  font-size: var(--font-size-semi-medium);
+  font-weight: var(--font-weight-bold);
+  border-radius: 8px;
+  padding: 10px;
+  border: 2px solid var(--main-text-color);
+}
+
+.backButton:hover {
+  background-color: var(--accent-color-pink);
+}
+
+.nextQuestion:hover {
+  background-color: var(--accent-color-green);
+}
+
+.navButton {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navButton>h4 {
+  font-size: var(--font-size-semi-medium);
+  font-weight: var(--font-weight-bold);
+  color: var(--main-text-color);
+}
+
+.questionContainer {
+  width: 100%;
+}
+
+.questionText {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .mainText {
+    font-size: var(--font-size-large);
+  }
+
+  .questionText {
+    font-size: var(--font-size-semi-medium);
+  }
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navButton>h4 {
+    display: none;
+  }
+}

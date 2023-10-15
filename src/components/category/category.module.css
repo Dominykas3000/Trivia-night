@@ -1,13 +1,8 @@
 .mainCard {
   gap: 32px;
-  padding: 24px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-  border-radius: 16px;
-  border: 2px solid var(--main-text-color);
-  box-shadow: var(--card-box-shadow);
   width: -webkit-fill-available;
   width: moz-available;
   width: stretch;
@@ -107,6 +102,6 @@
 @media screen and (max-width: 768px) {
   .mainCard>div {
     width: 100%;
-    height: 450px;
+    height: 500px;
   }
 }

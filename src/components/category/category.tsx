@@ -3,11 +3,11 @@
 "use client";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import Link from 'next/link';
 import { useState } from 'react';
 import CategoriesJson from '../../../public/categorySelection.json';
 import style from './category.module.css';
 import CategorySelectionCard from "../category-selection-card/categorySelectionCard";
+import Card from "../card/card";
 
 interface Category {
   value: string;
@@ -35,7 +35,7 @@ export default function Category() {
         vertical: true,
         mode: "free-snap",
         slides: {
-          perView: 1.05,
+          perView: 1,
           spacing: 0,
         },
       },
@@ -48,7 +48,8 @@ export default function Category() {
   }
 
   return (
-    <section className={style.mainCard}>
+    <Card>
+    <div className={style.mainCard}>
       <h1 className={style.mainText}>
         Select a category that you are interested in !
       </h1>
@@ -71,7 +72,7 @@ export default function Category() {
           </div>
         ))}
       </div>
-
-    </section >
+      </div >
+    </Card>  
   )
 }
