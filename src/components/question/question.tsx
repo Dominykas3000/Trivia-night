@@ -24,7 +24,7 @@ interface JsonCategory {
   link: string;
 }
 
-interface CategoriesJSon {
+interface CategoriesJson {
   categories: JsonCategory[];
 }
 
@@ -32,14 +32,15 @@ export default function Question(props: Category) {
   const [triviaQuestions, setTriviaQuestions] = useState<TriviaQuestion[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const { categories } = CategoriesJson as CategoriesJSon;
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const { categories } = CategoriesJson as CategoriesJson;
 
-  async function getTriviaLink() {
+  function getTriviaLink() {
     const category = categories.find((category) => category.value === props.categoryId);
     const link = category?.link;
-
     return link;
   }
+
   async function getTriviaData() {
     setLoading(true);
     try {
@@ -62,23 +63,20 @@ export default function Question(props: Category) {
       });
 
       setTriviaQuestions(shuffledQuestions);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching trivia data:', error);
-    } finally {
-      setLoading(false);
     }
   }
 
   function shuffleAnswers(array: string[]) {
-    const shuffleAnswers = [...array];
+    const shuffledAnswers = [...array];
 
-    for (let i = shuffleAnswers.length - 1; i > 0; i--) {
+    for (let i = shuffledAnswers.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-
-      [shuffleAnswers[i], shuffleAnswers[j]] = [shuffleAnswers[j], shuffleAnswers[i]];
+      [shuffledAnswers[i], shuffledAnswers[j]] = [shuffledAnswers[j], shuffledAnswers[i]];
     }
-    setLoading(false);
-    return shuffleAnswers;
+    return shuffledAnswers;
   }
 
   function removeCharacters(text: string) {
@@ -90,7 +88,7 @@ export default function Question(props: Category) {
   }
 
   function checkAnswer() {
-    const currentQuestion = triviaQuestions[0];
+    const currentQuestion = triviaQuestions[currentQuestionIndex];
     if (selectedAnswer === null) {
       return;
     }
@@ -101,63 +99,83 @@ export default function Question(props: Category) {
     }
   }
 
-  function getLoading() {
-    if (loading === true) {
-      return false;
+  function goToNextQuestion() {
+    if (currentQuestionIndex < triviaQuestions.length - 1) {
+      setSelectedAnswer(null);
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
-    return false;
   }
 
+  function goToPreviousQuestion() {
+    if (currentQuestionIndex > 0) {
+      setSelectedAnswer(null);
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  }
+  useEffect(() => {
+    setTimeout(() => {
+      console.log(selectedAnswer); // Log the updated selectedAnswer
+      checkAnswer();
+    }, 0);
+  }, [selectedAnswer]);
+  
   useEffect(() => {
     getTriviaData();
   }, []);
 
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  const currentQuestion = triviaQuestions[currentQuestionIndex];
+
+  if (!currentQuestion) {
+    // Handle the case when there are no questions to display
+    return <p>No questions available for this category.</p>;
+  }
+
   return (
     <>
-      
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-          triviaQuestions.map((triviaData, index) => (
-          <>
-          <h1 className={style.mainText}>Question #{index+1} of {props.categoryName}</h1>
+      <div className={style.questionContainer}>
+      <h1 className={style.mainText}>Question #{currentQuestionIndex + 1} of {props.categoryName}</h1>
       <hr className={style.sectionTab} />
-          <div className={style.questionContainer} key={index}>
-
-            <div>
-              <h2 className={style.questionText}>{removeCharacters(triviaData.question)}</h2>
-            </div>
-
-            <section className={style.buttonContainer}>
-              {triviaData.shuffledAnswers.map((answer: string, answerIndex: number) => (
-                <button
-                  key={answerIndex}
-                  className={answer === selectedAnswer ? style.answerButtonClicked : style.answerButton}
-                  onClick={() => handleAnswerSelect(answer)}>
-                  {removeCharacters(answer)}
-                </button>
-              ))}
-            </section>
-
-            <div className={style.navigationButtons}>
-              <Link href={'/categorySelection'}>
-                <button className={`${style.backButton} ${style.navButton}`}>
-                  <ArrowLeft height={25} width={25} />
-                  <h4>Back to Main Menu</h4>
-                </button>
-              </Link>
-              <button onClick={checkAnswer}
-                className={`${style.nextQuestion} ${style.navButton}`}>
-                <h4>Next Question</h4>
-                <ArrowRight height={25} width={25} />
-              </button>
-            </div>
-
-              </div>
+      <div className={style.questionContainer}>
+        <div>
+          <h2 className={style.questionText}>{removeCharacters(currentQuestion.question)}</h2>
+        </div>
+        <section className={style.buttonContainer}>
+          {currentQuestion.shuffledAnswers.map((answer: string, answerIndex: number) => (
+            <button
+              key={answerIndex}
+              className={answer === selectedAnswer
+                ? style.answerButtonClicked : style.answerButton}
+              onClick={() => {
+                handleAnswerSelect(answer);
+              }}
+            >
+              {removeCharacters(answer)}
+            </button>
+          ))}
+        </section>
+      </div>
+    </div><div className={style.navigationButtons}>
+        <button
+          className={`${style.backButton} ${style.navButton}`}
+          onClick={goToPreviousQuestion}
+          disabled={currentQuestionIndex === 0}
+        >
+          <ArrowLeft height={25} width={25} />
+          <h4>Previous Question</h4>
+        </button>
+        <button
+          className={`${style.nextQuestion} ${style.navButton}`}
+          onClick={goToNextQuestion}
+          disabled={currentQuestionIndex === triviaQuestions.length - 1}
+        >
+          <h4>Next Question</h4>
+          <ArrowRight height={25} width={25} />
+        </button>
+      </div>
     </>
-
-        ))
-      )}
-    </>
-  )
+  );
 }
