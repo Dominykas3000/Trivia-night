@@ -54,9 +54,10 @@
 }
 
 .startButton:hover {
-  background-color: var(--main-text-color);
   color: var(--main-bg-color);
+  transform: scale(1.01);
   border: 2px solid var(--main-bg-color);
+  box-shadow: var(--card-box-shadow);
 }
 
 @media screen and (max-width: 768px) {

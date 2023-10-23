@@ -7,8 +7,10 @@ export default function footer() {
     <footer className={style.footerContainer}>
       <div className={style.infoContainer}>
 
+        <Link href={'/'}>
         <h1 className={style.title}>Trivia Night</h1>
-
+        </Link>
+          
         <div className={style.linkContainer}>
           <a className={style.link} target='_blank' href='https://opentdb.com'>Trivia DB</a>
           <a className={style.link} target='_blank' href='https://github.com/Dominykas3000/Trivia-night'>Projects GitHub</a>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import CategoriesJson from '../../../public/categorySelection.json';
-import Link from "next/link";
 import ArrowLeft from '../../../public/arrowLeft.svg';
 import ArrowRight from '../../../public/arrowRight.svg';
 import style from './question.module.css';
@@ -31,7 +30,7 @@ interface CategoriesJson {
 export default function Question(props: Category) {
   const [triviaQuestions, setTriviaQuestions] = useState<TriviaQuestion[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [selectedAnswers, setSelectedAnswers] = useState<(string)[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const { categories } = CategoriesJson as CategoriesJson;
 
@@ -83,16 +82,24 @@ export default function Question(props: Category) {
     return text.replace(/(&quot\;)/g, "\"").replace(/(&rsquo\;)/g, "\"").replace(/(&#039\;)/g, "\'").replace(/(&amp\;)/g, "\"").replace(/(&ldquo\;)/g, "\"").replace(/(&rdquo\;)/g, "\"").replace(/(&eacute\;)/g, "é").replace(/(&shy\;)/g, "").replace(/(&uuml;)/g, "ü");
   }
 
-  function handleAnswerSelect(answer: string) {
-    setSelectedAnswer(answer);
+  async function  handleAnswerSelect(answer: string) {
+    await setSelectedAnswers([...selectedAnswers, answer]);
+    console.log('selected answers: ', selectedAnswers);
+  }
+
+  function getCorrectAnswers(): string[] {
+    const correctAnswers = triviaQuestions.map((triviaQuestion) => triviaQuestion.correct_answer);
+    console.log(correctAnswers)
+    return correctAnswers;
   }
 
   function checkAnswer() {
+    const correctAnswers = getCorrectAnswers();
     const currentQuestion = triviaQuestions[currentQuestionIndex];
-    if (selectedAnswer === null) {
+    if (selectedAnswers[0] === null) {
       return;
     }
-    if (selectedAnswer === currentQuestion.correct_answer) {
+    if (selectedAnswers[0] === currentQuestion.correct_answer) {
       alert("Correct!");
     } else {
       alert("Incorrect. Try again!");
@@ -101,27 +108,24 @@ export default function Question(props: Category) {
 
   function goToNextQuestion() {
     if (currentQuestionIndex < triviaQuestions.length - 1) {
-      setSelectedAnswer(null);
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   }
 
   function goToPreviousQuestion() {
     if (currentQuestionIndex > 0) {
-      setSelectedAnswer(null);
       setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
   }
   useEffect(() => {
     setTimeout(() => {
-      console.log(selectedAnswer); // Log the updated selectedAnswer
       checkAnswer();
     }, 0);
-  }, [selectedAnswer]);
-  
+  }, [selectedAnswers]);
+
   useEffect(() => {
     getTriviaData();
-  }, []);
+  }, [props.categoryId]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -130,35 +134,34 @@ export default function Question(props: Category) {
   const currentQuestion = triviaQuestions[currentQuestionIndex];
 
   if (!currentQuestion) {
-    // Handle the case when there are no questions to display
-    return <p>No questions available for this category.</p>;
+    return <p>Loading...</p>;
   }
 
   return (
     <>
       <div className={style.questionContainer}>
-      <h1 className={style.mainText}>Question #{currentQuestionIndex + 1} of {props.categoryName}</h1>
-      <hr className={style.sectionTab} />
-      <div className={style.questionContainer}>
-        <div>
-          <h2 className={style.questionText}>{removeCharacters(currentQuestion.question)}</h2>
+        <h1 className={style.mainText}>Question #{currentQuestionIndex + 1} of {props.categoryName}</h1>
+        <hr className={style.sectionTab} />
+        <div className={style.questionContainer}>
+          <div>
+            <h2 className={style.questionText}>{removeCharacters(currentQuestion.question)}</h2>
+          </div>
+          <section className={style.buttonContainer}>
+            {currentQuestion.shuffledAnswers.map((answer: string, answerIndex: number) => (
+              <button
+                key={answerIndex}
+                className={answer === selectedAnswers[currentQuestionIndex]
+                  ? style.answerButtonClicked : style.answerButton}
+                onClick={() => {
+                  handleAnswerSelect(answer);
+                }}
+              >
+                {removeCharacters(answer)}
+              </button>
+            ))}
+          </section>
         </div>
-        <section className={style.buttonContainer}>
-          {currentQuestion.shuffledAnswers.map((answer: string, answerIndex: number) => (
-            <button
-              key={answerIndex}
-              className={answer === selectedAnswer
-                ? style.answerButtonClicked : style.answerButton}
-              onClick={() => {
-                handleAnswerSelect(answer);
-              }}
-            >
-              {removeCharacters(answer)}
-            </button>
-          ))}
-        </section>
-      </div>
-    </div><div className={style.navigationButtons}>
+      </div><div className={style.navigationButtons}>
         <button
           className={`${style.backButton} ${style.navButton}`}
           onClick={goToPreviousQuestion}
