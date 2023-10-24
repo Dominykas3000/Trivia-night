@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import CategoriesJson from '../../../public/categorySelection.json';
 import ArrowLeft from '../../../public/arrowLeft.svg';
 import ArrowRight from '../../../public/arrowRight.svg';
+import ArrowEnd from '../../../public/arrowContinue.svg';
+import GoBackArrow from '../../../public/goBack.svg';
 import style from './question.module.css';
 
 interface TriviaQuestion {
@@ -82,12 +84,7 @@ export default function Question(props: Category) {
     return text.replace(/(&quot\;)/g, "\"").replace(/(&rsquo\;)/g, "\"").replace(/(&#039\;)/g, "\'").replace(/(&amp\;)/g, "\"").replace(/(&ldquo\;)/g, "\"").replace(/(&rdquo\;)/g, "\"").replace(/(&eacute\;)/g, "é").replace(/(&shy\;)/g, "").replace(/(&uuml;)/g, "ü");
   }
 
-  async function  handleAnswerSelect(answer: string) {
-    await setSelectedAnswers([...selectedAnswers, answer]);
-    console.log('selected answers: ', selectedAnswers);
-  }
-
-  function getCorrectAnswers(): string[] {
+  function getCorrectAnswers() {
     const correctAnswers = triviaQuestions.map((triviaQuestion) => triviaQuestion.correct_answer);
     console.log(correctAnswers)
     return correctAnswers;
@@ -96,13 +93,14 @@ export default function Question(props: Category) {
   function checkAnswer() {
     const correctAnswers = getCorrectAnswers();
     const currentQuestion = triviaQuestions[currentQuestionIndex];
+
     if (selectedAnswers[0] === null) {
       return;
     }
     if (selectedAnswers[0] === currentQuestion.correct_answer) {
-      alert("Correct!");
+      console.warn("Correct!");
     } else {
-      alert("Incorrect. Try again!");
+      console.warn("Incorrect. Try again!");
     }
   }
 
@@ -119,8 +117,8 @@ export default function Question(props: Category) {
   }
   useEffect(() => {
     setTimeout(() => {
-      checkAnswer();
-    }, 0);
+      getCorrectAnswers();
+    }, 10);
   }, [selectedAnswers]);
 
   useEffect(() => {
@@ -135,6 +133,19 @@ export default function Question(props: Category) {
 
   if (!currentQuestion) {
     return <p>Loading...</p>;
+  }
+
+  function handleAnswerSelect(answer: string, currentQuestionIndex: number) {
+    console.log('answer: ', answer);
+    console.log('currentQuestionIndex: ', currentQuestionIndex);
+
+    const updatedAnswers = [...selectedAnswers];
+    updatedAnswers[currentQuestionIndex] = answer;
+    if (currentQuestionIndex >= updatedAnswers.length) {
+      updatedAnswers.push(answer);
+    }
+    setSelectedAnswers(updatedAnswers);
+    console.log('selected answers: ', updatedAnswers);
   }
 
   return (
@@ -153,7 +164,7 @@ export default function Question(props: Category) {
                 className={answer === selectedAnswers[currentQuestionIndex]
                   ? style.answerButtonClicked : style.answerButton}
                 onClick={() => {
-                  handleAnswerSelect(answer);
+                  handleAnswerSelect(answer, currentQuestionIndex);
                 }}
               >
                 {removeCharacters(answer)}
@@ -161,23 +172,46 @@ export default function Question(props: Category) {
             ))}
           </section>
         </div>
-      </div><div className={style.navigationButtons}>
-        <button
-          className={`${style.backButton} ${style.navButton}`}
-          onClick={goToPreviousQuestion}
-          disabled={currentQuestionIndex === 0}
-        >
-          <ArrowLeft height={25} width={25} />
-          <h4>Previous Question</h4>
-        </button>
-        <button
-          className={`${style.nextQuestion} ${style.navButton}`}
-          onClick={goToNextQuestion}
-          disabled={currentQuestionIndex === triviaQuestions.length - 1}
-        >
-          <h4>Next Question</h4>
-          <ArrowRight height={25} width={25} />
-        </button>
+      </div>
+      <div className={style.navigationButtons}>
+        {
+          currentQuestionIndex == 0 ? 
+            <button
+              className={`${style.reverseButton} ${style.navButton}`}
+              onClick={goToPreviousQuestion}
+              disabled={currentQuestionIndex === 0}
+            >
+              <GoBackArrow height={25} width={25} />
+              <h4>Back</h4>
+            </button>  
+          : 
+            <button
+              className={`${style.backButton} ${style.navButton}`}
+              onClick={goToPreviousQuestion}
+              disabled={currentQuestionIndex === 0}
+            >
+              <ArrowLeft height={25} width={25} />
+              <h4>Previous Question</h4>
+            </button>
+        }
+        {
+          currentQuestionIndex == 4 ?
+            <button
+              className={`${style.nextStep} ${style.navButton}`}
+            >
+              <h4>Finish</h4>
+              <ArrowEnd height={25} width={25} />
+            </button>
+          :
+            <button
+              className={`${style.nextQuestion} ${style.navButton}`}
+              onClick={goToNextQuestion}
+              disabled={currentQuestionIndex === triviaQuestions.length - 1}
+            >
+              <h4>Next Question</h4>
+              <ArrowRight height={25} width={25} />
+            </button>
+        }
       </div>
     </>
   );

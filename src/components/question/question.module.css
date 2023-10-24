@@ -10,6 +10,7 @@
   margin: 0 auto;
   width: 100%;
   min-height: 60px;
+  transition: all 0.2s ease-in-out;
 }
 
 .answerButton:hover {
@@ -24,6 +25,14 @@
   margin: 0 auto;
   width: 100%;
   min-height: 60px;
+}
+
+.nextStep:hover,
+.reverseButton:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background: var(--linear-gradient);
 }
 
 .mainText {
@@ -76,7 +85,7 @@
 }
 
 .nextQuestion:hover {
-  background-color: var(--accent-color-green);
+  background-color: var(--accent-color-hot-purple);
 }
 
 .navButton {

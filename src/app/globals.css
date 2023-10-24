@@ -2,11 +2,11 @@
    --main-bg-color: #F7F7FF;
    --main-text-color: #070600;
    --accent-color-pink: #ea526f;
-   --accent-color-hot-pink: rgb(240, 34, 72);
+   --accent-color-hot-pink: #f02248;
    --accent-color-green: #629677;
-   --accent-color-hot-green: rgb(48, 236, 123);
+   --accent-color-hot-green: #30ec7b;
    --accent-color-purple: #585481;
-   --accent-color-hot-purple: rgb(133, 123, 244);
+   --accent-color-hot-purple: #857bf4;
    --card-background-color: #f2f3f5;
    /* --font-family: 'Inter', sans-serif; */
    --font-family-alternative: 'Merriweather', serif;
@@ -20,6 +20,7 @@
    --font-size-large: 24px;
    --font-size-huge: 32px;
    --card-box-shadow: rgba(133, 123, 244, 0.4) 5px 5px, rgba(48, 236, 123, 0.3) 10px 10px, rgba(240, 34, 72, 0.2) 15px 15px, rgba(133, 123, 244, 0.1) 20px 20px, rgba(48, 236, 123, 0.05) 25px 25px;
+   --linear-gradient: linear-gradient(142deg, rgba(240, 34, 72, 1) 0%, rgba(133, 123, 244, 1) 50%, rgba(48, 236, 123, 1) 100%);
  }
 
  * {
