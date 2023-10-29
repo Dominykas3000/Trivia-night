@@ -33,6 +33,7 @@
   transform: scale(1.1);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   background: var(--linear-gradient);
+  scale: 1.1;
 }
 
 .mainText {
@@ -112,6 +113,13 @@
   text-align: center;
   padding: 16px 0;
 }
+
+.nextStep:disabled {
+  background-color: #a8a4a4;
+  color: var(--main-text-color);
+  cursor: not-allowed;
+}
+
 
 @media screen and (max-width: 768px) {
   .mainText {

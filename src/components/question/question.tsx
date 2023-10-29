@@ -22,7 +22,6 @@ interface Category {
 
 export default function Question(props: Category) {
   const { categoryName, categoryId, categoryLink } = props;
-
   const [triviaQuestions, setTriviaQuestions] = useState<TriviaQuestion[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [selectedAnswers, setSelectedAnswers] = useState<(string)[]>([]);
@@ -50,10 +49,11 @@ export default function Question(props: Category) {
       });
 
       setTriviaQuestions(shuffledQuestions);
-      setLoading(false);
     } catch (error) {
       console.error('Error fetching trivia data:', error);
     }
+    setLoading(false);
+
   }
 
   function shuffleAnswers(array: string[]) {
@@ -73,21 +73,7 @@ export default function Question(props: Category) {
   function getCorrectAnswers() {
     const correctAnswers = triviaQuestions.map((triviaQuestion) => triviaQuestion.correct_answer);
     console.log(correctAnswers)
-    return correctAnswers;
-  }
-
-  function checkAnswer() {
-    const correctAnswers = getCorrectAnswers();
-    const currentQuestion = triviaQuestions[currentQuestionIndex];
-
-    if (selectedAnswers[0] === null) {
-      return;
-    }
-    if (selectedAnswers[0] === currentQuestion.correct_answer) {
-      console.warn("Correct!");
-    } else {
-      console.warn("Incorrect. Try again!");
-    }
+    return JSON.stringify(correctAnswers);
   }
 
   function goToNextQuestion() {
@@ -108,8 +94,8 @@ export default function Question(props: Category) {
   }, [selectedAnswers]);
 
   useEffect(() => {
-    getTriviaData();
-  }, [props.categoryId]);
+      getTriviaData();
+  }, [categoryLink]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -122,8 +108,6 @@ export default function Question(props: Category) {
   }
 
   function handleAnswerSelect(answer: string, currentQuestionIndex: number) {
-    console.log('answer: ', answer);
-    console.log('currentQuestionIndex: ', currentQuestionIndex);
 
     const updatedAnswers = [...selectedAnswers];
     updatedAnswers[currentQuestionIndex] = answer;
@@ -132,6 +116,11 @@ export default function Question(props: Category) {
     }
     setSelectedAnswers(updatedAnswers);
     console.log('selected answers: ', updatedAnswers);
+  }
+
+  function sendSelectedAnswers() {
+    console.log( JSON.stringify(selectedAnswers))
+    return JSON.stringify(selectedAnswers)
   }
 
   return (
@@ -179,13 +168,23 @@ export default function Question(props: Category) {
             </button>
         }
         {
-          currentQuestionIndex == 4 ?
-            <button
-              className={`${style.nextStep} ${style.navButton}`}
-            >
-              <h4>Finish</h4>
-              <ArrowEnd height={25} width={25} />
-            </button>
+          currentQuestionIndex == triviaQuestions.length - 1 ?
+            <Link
+              href={{
+                pathname: "/result",
+                query: {
+                  selectedAnswers: sendSelectedAnswers(),
+                  correctAnswers: getCorrectAnswers(),
+                  questionsCount: triviaQuestions.length,
+                }
+              }}>
+              <button
+                className={`${style.nextStep} ${style.navButton}`}
+                  disabled={selectedAnswers.length !== triviaQuestions.length ||  selectedAnswers.includes('')}>
+                <h4>Finish</h4>
+                <ArrowEnd height={25} width={25} />
+                </button>
+            </Link>  
           :
             <button
               className={`${style.nextQuestion} ${style.navButton}`}
