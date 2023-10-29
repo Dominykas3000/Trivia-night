@@ -36,10 +36,13 @@
 }
 
 .categoryImage {
-  width: 100%;
-  height: 50vh;
-  object-fit: fill;
+  /* width: 100%;
+  height: 50vh; */
+  object-fit: cover;
   border-radius: 6px 6px 0px 0px;
   border-bottom: 2px solid var(--main-text-color);
+  width: --webkit-fill-available;
+  width: -moz-available;
+  width: auto;
 }
 

@@ -1,28 +1,51 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import Link from 'next/link';
-import style from './category-selection-card.module.css'
+import style from './category-selection-card.module.css';
+
 interface Category {
   categoryName: string;
   categoryId: string;
   categoryImage: string;
   categoryLink: string;
+  questionCount: number;
 }
 
 export default function CategorySelectionCard(props: Category) {
-  const { categoryName, categoryImage, categoryId } = props;
+  const {
+    categoryName,
+    categoryImage,
+    categoryId,
+    categoryLink,
+    questionCount
+  } = props;
+
+  function getTriviaLink() {
+    // console.log(categoryLink.replace("amount=1", "amount=" + questionCount))
+    return categoryLink.replace("amount=1", "amount=" + questionCount);
+  }
+
   return (
     <div className={style.categoryContainer}>
-      <img className={style.categoryImage} src={categoryImage} alt="" />
+      <Image className={style.categoryImage}
+        src={categoryImage}
+        priority={true}
+        alt="category"
+        width={400}
+        height={400}
+      />
       <h3 className={style.categoryName}>{categoryName}</h3>
       <Link
         href={{
           pathname: '/play',
           query: {
-            categoryId: categoryId ,
+            categoryId: categoryId,
             category: categoryName,
+            categoryLink: getTriviaLink()
           }
         }}>
-        <button className={style.startButton}>
+        <button
+          onClick={() => { }}
+          className={style.startButton}>
           Start Playing!
         </button>
       </Link>

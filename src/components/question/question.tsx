@@ -1,8 +1,8 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import CategoriesJson from '../../../public/categorySelection.json';
+import ArrowEnd from '../../../public/arrowContinue.svg';
 import ArrowLeft from '../../../public/arrowLeft.svg';
 import ArrowRight from '../../../public/arrowRight.svg';
-import ArrowEnd from '../../../public/arrowContinue.svg';
 import GoBackArrow from '../../../public/goBack.svg';
 import style from './question.module.css';
 
@@ -17,35 +17,21 @@ interface TriviaQuestion {
 interface Category {
   categoryName: string;
   categoryId: string;
-}
-
-interface JsonCategory {
-  value: string;
-  name: string;
-  link: string;
-}
-
-interface CategoriesJson {
-  categories: JsonCategory[];
+  categoryLink: string;
 }
 
 export default function Question(props: Category) {
+  const { categoryName, categoryId, categoryLink } = props;
+
   const [triviaQuestions, setTriviaQuestions] = useState<TriviaQuestion[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [selectedAnswers, setSelectedAnswers] = useState<(string)[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const { categories } = CategoriesJson as CategoriesJson;
-
-  function getTriviaLink() {
-    const category = categories.find((category) => category.value === props.categoryId);
-    const link = category?.link;
-    return link;
-  }
 
   async function getTriviaData() {
     setLoading(true);
     try {
-      const link = await getTriviaLink();
+      const link = await categoryLink;
       if (!link) {
         throw new Error('Trivia link is undefined');
       }
@@ -176,14 +162,12 @@ export default function Question(props: Category) {
       <div className={style.navigationButtons}>
         {
           currentQuestionIndex == 0 ? 
-            <button
-              className={`${style.reverseButton} ${style.navButton}`}
-              onClick={goToPreviousQuestion}
-              disabled={currentQuestionIndex === 0}
-            >
-              <GoBackArrow height={25} width={25} />
-              <h4>Back</h4>
-            </button>  
+            <Link href="/categorySelection">
+              <button className={`${style.reverseButton} ${style.navButton}`}>
+                <GoBackArrow height={25} width={25} />
+                <h4>Back</h4>
+              </button>  
+            </Link>
           : 
             <button
               className={`${style.backButton} ${style.navButton}`}

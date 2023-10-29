@@ -91,12 +91,59 @@
   max-height: 100vh;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 
 .numberLabel {
   font-size: var(--font-size-semi-medium);
   color: var(--main-text-color);
   font-weight: var(--font-weight-semi-bold);
   margin-left: 12px;
+}
+
+.radioContainer {
+  border-radius: 16px;
+}
+
+.radioLabel {
+  font-size: var(--font-size-medium);
+  color: var(--main-text-color);
+  font-weight: var(--font-weight-semi-bold);
+  padding: 9px 16px;
+  border: 2px solid var(--main-text-color);
+  transition: all 0.2s ease-in-out;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.radioContainer>label:first-of-type {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.radioContainer>label:last-of-type {
+  border-radius: 0px 4px 4px 0px;
+  border-left: none;
+}
+
+.radioContainer {
+  display: flex;
+  margin: 0 auto;
+}
+
+.radioLabel:hover, .radioLabelClicked {
+  cursor: pointer;
+  background-color: var(--accent-color-green);
+}
+
+.radioButton {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,14 +1,27 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-    webpack(config) {
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: "@svgr/webpack",
-        });
+  reactStrictMode: true,
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: "@svgr/webpack",
+    });
 
-        return config;
-    }
-}
+    return config;
+  },
 
-module.exports = nextConfig
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
+      },
+    ],
+  },
+};
+
+module.exports = nextConfig;

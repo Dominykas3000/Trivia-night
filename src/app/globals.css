@@ -124,7 +124,7 @@
  }
 
 
- input[type="radio"] {
+ /* input[type="radio"] {
    appearance: none;
    background-color: #fff;
    margin: 0;
@@ -157,4 +157,4 @@
 
  input[type="radio"]:checked::before {
    transform: scale(1);
- }
+ } */

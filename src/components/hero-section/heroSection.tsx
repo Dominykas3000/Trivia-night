@@ -11,7 +11,7 @@ export default function HeroSection() {
                 className={style.heroImage}
                 src={HeroImage}
                 alt="Hero Image"
-                layout="responsive"
+                priority={true}
                 width={1920}
                 height={1080}
             />
