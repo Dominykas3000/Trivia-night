@@ -5,10 +5,10 @@ import { useSearchParams } from 'next/navigation';
 
 export default function Play() {
   const searchCategories = useSearchParams();
-  const categoryName = searchCategories.get('category') || 'General Knowledge';
-  const categoryId = searchCategories.get('categoryId') || '9';
-  const categoryLink = searchCategories.get('categoryLink') || 'https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple';
-  // console.log(categoryName, categoryId, categoryLink);
+  const categoryName = searchCategories.get('category') || '';
+  const categoryId = searchCategories.get('categoryId') || '';
+  const categoryLink = searchCategories.get('categoryLink') || '';
+  console.log("play "+ categoryLink);
   return (
     <>
       <Card>

@@ -24,6 +24,8 @@ export default function CategorySelectionCard(props: Category) {
     return categoryLink.replace("amount=1", "amount=" + questionCount);
   }
 
+  console.log(getTriviaLink());
+
   return (
     <div className={style.categoryContainer}>
       <Image className={style.categoryImage}
@@ -43,9 +45,7 @@ export default function CategorySelectionCard(props: Category) {
             categoryLink: getTriviaLink()
           }
         }}>
-        <button
-          onClick={() => { }}
-          className={style.startButton}>
+        <button className={style.startButton}>
           Start Playing!
         </button>
       </Link>

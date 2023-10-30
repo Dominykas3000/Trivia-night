@@ -30,7 +30,7 @@ export default function Question(props: Category) {
   async function getTriviaData() {
     setLoading(true);
     try {
-      const link = await categoryLink;
+      const link = categoryLink;
       if (!link) {
         throw new Error('Trivia link is undefined');
       }
@@ -72,7 +72,7 @@ export default function Question(props: Category) {
 
   function getCorrectAnswers() {
     const correctAnswers = triviaQuestions.map((triviaQuestion) => triviaQuestion.correct_answer);
-    console.log(correctAnswers)
+    // console.log(correctAnswers)
     return JSON.stringify(correctAnswers);
   }
 
@@ -94,7 +94,7 @@ export default function Question(props: Category) {
   }, [selectedAnswers]);
 
   useEffect(() => {
-      getTriviaData();
+    getTriviaData();
   }, [categoryLink]);
 
   if (loading) {
@@ -115,11 +115,11 @@ export default function Question(props: Category) {
       updatedAnswers.push(answer);
     }
     setSelectedAnswers(updatedAnswers);
-    console.log('selected answers: ', updatedAnswers);
+    // console.log('selected answers: ', updatedAnswers);
   }
 
   function sendSelectedAnswers() {
-    console.log( JSON.stringify(selectedAnswers))
+    // console.log(JSON.stringify(selectedAnswers))
     return JSON.stringify(selectedAnswers)
   }
 
@@ -150,14 +150,14 @@ export default function Question(props: Category) {
       </div>
       <div className={style.navigationButtons}>
         {
-          currentQuestionIndex == 0 ? 
+          currentQuestionIndex == 0 ?
             <Link href="/categorySelection">
               <button className={`${style.reverseButton} ${style.navButton}`}>
                 <GoBackArrow height={25} width={25} />
                 <h4>Back</h4>
-              </button>  
+              </button>
             </Link>
-          : 
+            :
             <button
               className={`${style.backButton} ${style.navButton}`}
               onClick={goToPreviousQuestion}
@@ -173,6 +173,9 @@ export default function Question(props: Category) {
               href={{
                 pathname: "/result",
                 query: {
+                  categoryId: categoryId,
+                  category: categoryName,
+                  categoryLink: categoryLink,
                   selectedAnswers: sendSelectedAnswers(),
                   correctAnswers: getCorrectAnswers(),
                   questionsCount: triviaQuestions.length,
@@ -180,12 +183,12 @@ export default function Question(props: Category) {
               }}>
               <button
                 className={`${style.nextStep} ${style.navButton}`}
-                  disabled={selectedAnswers.length !== triviaQuestions.length ||  selectedAnswers.includes('')}>
+                disabled={selectedAnswers.length !== triviaQuestions.length || selectedAnswers.includes('')}>
                 <h4>Finish</h4>
                 <ArrowEnd height={25} width={25} />
-                </button>
-            </Link>  
-          :
+              </button>
+            </Link>
+            :
             <button
               className={`${style.nextQuestion} ${style.navButton}`}
               onClick={goToNextQuestion}
